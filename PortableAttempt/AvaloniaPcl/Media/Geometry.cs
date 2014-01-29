@@ -1,0 +1,42 @@
+﻿// -----------------------------------------------------------------------
+// <copyright file="Geometry.cs" company="Steven Kirk">
+// Copyright 2013 MIT Licence. See licence.md for more information.
+// </copyright>
+// -----------------------------------------------------------------------
+
+using Avalonia.Animation;
+using Avalonia.Core;
+using Avalonia.Platform;
+
+namespace Avalonia.Media
+{
+    [TypeConverter(typeof(GeometryConverter))]
+    public abstract class Geometry : Animatable
+    {
+        public static double StandardFlatteningTolerance 
+        {
+            get { return 0.25; }
+        }
+
+        public virtual Rect Bounds 
+        {
+            get { return new Rect(); }
+        }
+
+        public IPlatformStreamGeometry PlatformImpl
+        {
+            get;
+            protected set;
+        }
+
+        public Rect GetRenderBounds(Pen pen)
+        {
+            return this.GetRenderBounds(pen, StandardFlatteningTolerance, ToleranceType.Absolute);
+        }
+
+        public virtual Rect GetRenderBounds(Pen pen, double tolerance, ToleranceType type)
+        {
+            return this.PlatformImpl.GetRenderBounds(pen, tolerance, type);
+        }
+    }
+}

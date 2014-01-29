@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F8FDA2A-4A31-490C-B6A5-303B924D0962}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Avalonia</RootNamespace>
+    <AssemblyName>Avalonia</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmbientAttribute.cs" />
+    <Compile Include="Animation\Animatable.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="ApplicationBase.cs" />
+    <Compile Include="AvaloniaCollection.cs" />
+    <Compile Include="AvaloniaSpecificAttribute.cs" />
+    <Compile Include="CoerceValueCallback.cs" />
+    <Compile Include="ContentElement.cs" />
+    <Compile Include="Controls\BindableAttribute.cs" />
+    <Compile Include="Controls\Border.cs" />
+    <Compile Include="Controls\Button.cs" />
+    <Compile Include="Controls\CheckBox.cs" />
+    <Compile Include="Controls\ColumnDefinition.cs" />
+    <Compile Include="Controls\ColumnDefinitionCollection.cs" />
+    <Compile Include="Controls\ContentControl.cs" />
+    <Compile Include="Controls\ContentPresenter.cs" />
+    <Compile Include="Controls\ContentPropertyAttribute.cs" />
+    <Compile Include="Controls\Control.cs" />
+    <Compile Include="Controls\ControlTemplate.cs" />
+    <Compile Include="Controls\Decorator.cs" />
+    <Compile Include="Controls\DefinitionBase.cs" />
+    <Compile Include="Controls\Grid.cs" />
+    <Compile Include="Controls\Image.cs" />
+    <Compile Include="Controls\ItemCollection.cs" />
+    <Compile Include="Controls\ItemContainerGenerator.cs" />
+    <Compile Include="Controls\ItemsControl.cs" />
+    <Compile Include="Controls\ItemsPanelTemplate.cs" />
+    <Compile Include="Controls\ItemsPresenter.cs" />
+    <Compile Include="Controls\IUriContext.cs" />
+    <Compile Include="Controls\Orientation.cs" />
+    <Compile Include="Controls\Panel.cs" />
+    <Compile Include="Controls\Primitives\ButtonBase.cs" />
+    <Compile Include="Controls\Primitives\GeneratorDirection.cs" />
+    <Compile Include="Controls\Primitives\GeneratorPosition.cs" />
+    <Compile Include="Controls\Primitives\IItemContainerGenerator.cs" />
+    <Compile Include="Controls\Primitives\IRecyclingItemContainerGenerator.cs" />
+    <Compile Include="Controls\Primitives\ItemsChangedEventArgs.cs" />
+    <Compile Include="Controls\Primitives\ItemsChangedEventHandler.cs" />
+    <Compile Include="Controls\Primitives\Popup.cs" />
+    <Compile Include="Controls\Primitives\PopupRoot.cs" />
+    <Compile Include="Controls\Primitives\TextBoxBase.cs" />
+    <Compile Include="Controls\Primitives\ToggleButton.cs" />
+    <Compile Include="Controls\RowDefinition.cs" />
+    <Compile Include="Controls\RowDefinitionCollection.cs" />
+    <Compile Include="Controls\StackPanel.cs" />
+    <Compile Include="Controls\StretchDirection.cs" />
+    <Compile Include="Controls\TemplateContent.cs" />
+    <Compile Include="Controls\TextBlock.cs" />
+    <Compile Include="Controls\TextBox.cs" />
+    <Compile Include="Controls\TextBoxView.cs" />
+    <Compile Include="Controls\UIElementCollection.cs" />
+    <Compile Include="Controls\UserControl.cs" />
+    <Compile Include="Controls\VirtualizingPanel.cs" />
+    <Compile Include="Controls\XamlNodeList.cs" />
+    <Compile Include="Core\Extensions.cs" />
+    <Compile Include="Core\Point.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Core\Rect.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Core\Size.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="CornerRadius.cs" />
+    <Compile Include="CornerRadiusConverter.cs" />
+    <Compile Include="DataTemplate.cs" />
+    <Compile Include="DataTemplateKey.cs" />
+    <Compile Include="Data\Data\Binding.cs" />
+    <Compile Include="Data\Data\BindingBase.cs" />
+    <Compile Include="Data\Data\BindingExpression.cs" />
+    <Compile Include="Data\Data\BindingExpressionBase.cs" />
+    <Compile Include="Data\Data\BindingOperations.cs" />
+    <Compile Include="Data\Data\CollectionView.cs" />
+    <Compile Include="Data\Data\CollectionViewSource.cs" />
+    <Compile Include="Data\Data\CurrentChangingEventArgs.cs" />
+    <Compile Include="Data\Data\CurrentChangingEventHandler.cs" />
+    <Compile Include="Data\Data\EnumerableCollectionView.cs" />
+    <Compile Include="Data\Data\GroupDescription.cs" />
+    <Compile Include="Data\Data\ICollectionView.cs" />
+    <Compile Include="Data\Data\IPropertyPathParser.cs" />
+    <Compile Include="Data\Data\ListCollectionView.cs" />
+    <Compile Include="Data\Data\MarkupExtension.cs" />
+    <Compile Include="Data\Data\PropertyPathParser.cs" />
+    <Compile Include="Data\Data\PropertyPathToken.cs" />
+    <Compile Include="Data\Data\PropertyPathTokenType.cs" />
+    <Compile Include="Data\Data\RelativeSource.cs" />
+    <Compile Include="Data\Data\RelativeSourceMode.cs" />
+    <Compile Include="Data\Data\UIElement.cs" />
+    <Compile Include="Data\Data\UpdateSourceTrigger.cs" />
+    <Compile Include="DependencyObject.cs" />
+    <Compile Include="DependencyObjectType.cs" />
+    <Compile Include="DependencyProperty.cs" />
+    <Compile Include="DependencyPropertyChangedEventArgs.cs" />
+    <Compile Include="DependencyPropertyChangedEventHandler.cs" />
+    <Compile Include="DependencyPropertyConverter.cs" />
+    <Compile Include="DependencyPropertyKey.cs" />
+    <Compile Include="DictionaryKeyPropertyAttribute.cs" />
+    <Compile Include="Document\TextElement.cs" />
+    <Compile Include="EventManager.cs" />
+    <Compile Include="FlowDirection.cs" />
+    <Compile Include="FontStretch.cs" />
+    <Compile Include="FontStyle.cs" />
+    <Compile Include="FontStyles.cs" />
+    <Compile Include="FontWeight.cs" />
+    <Compile Include="FontWeights.cs" />
+    <Compile Include="FrameworkContentElement.cs" />
+    <Compile Include="FrameworkElement.cs" />
+    <Compile Include="FrameworkElementFactory.cs" />
+    <Compile Include="FrameworkPropertyMetadata.cs" />
+    <Compile Include="FrameworkPropertyMetadataOptions.cs" />
+    <Compile Include="FrameworkTemplate.cs" />
+    <Compile Include="Freezable.cs" />
+    <Compile Include="GenerationState.cs" />
+    <Compile Include="GridLength.cs" />
+    <Compile Include="GridLengthConverter.cs" />
+    <Compile Include="GridUnitType.cs" />
+    <Compile Include="HorizontalAlignment.cs" />
+    <Compile Include="ICloneable.cs" />
+    <Compile Include="IInputElement.cs" />
+    <Compile Include="INameScope.cs" />
+    <Compile Include="Input\InputDevice.cs" />
+    <Compile Include="Input\InputEventArgs.cs" />
+    <Compile Include="Input\InputManager.cs" />
+    <Compile Include="Input\Key.cs" />
+    <Compile Include="Input\Keyboard.cs" />
+    <Compile Include="Input\KeyboardDevice.cs" />
+    <Compile Include="Input\KeyboardEventArgs.cs" />
+    <Compile Include="Input\KeyboardFocusChangedEventArgs.cs" />
+    <Compile Include="Input\KeyboardFocusChangedEventHandler.cs" />
+    <Compile Include="Input\KeyEventArgs.cs" />
+    <Compile Include="Input\KeyEventHandler.cs" />
+    <Compile Include="Input\KeyStates.cs" />
+    <Compile Include="Input\ModifierKeys.cs" />
+    <Compile Include="Input\Mouse.cs" />
+    <Compile Include="Input\MouseButtonEventArgs.cs" />
+    <Compile Include="Input\MouseButtonEventHandler.cs" />
+    <Compile Include="Input\MouseDevice.cs" />
+    <Compile Include="Input\MouseEventArgs.cs" />
+    <Compile Include="Input\MouseEventHandler.cs" />
+    <Compile Include="Input\PreProcessInputEventArgs.cs" />
+    <Compile Include="Input\PreProcessInputEventHandler.cs" />
+    <Compile Include="Input\TextComposition.cs" />
+    <Compile Include="Input\TextCompositionEventArgs.cs" />
+    <Compile Include="Input\TextCompositionEventHandler.cs" />
+    <Compile Include="Input\TextCompositionManager.cs" />
+    <Compile Include="Interop\WindowInteropHelper.cs" />
+    <Compile Include="IObservableDependencyObject.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="IQueryAmbient.cs" />
+    <Compile Include="IResourceManager.cs" />
+    <Compile Include="ISupportInitialize.cs" />
+    <Compile Include="ITopLevelWindow.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="ITypeConverter.cs" />
+    <Compile Include="IWeakEventListener.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="LayoutManager.cs" />
+    <Compile Include="LocalValueEntry.cs" />
+    <Compile Include="LocalValueEnumerator.cs" />
+    <Compile Include="LogicalTreeHelper.cs" />
+    <Compile Include="Core\Matrix.cs" />
+    <Compile Include="MarkupExtension.cs" />
+    <Compile Include="MarkupExtensionReturnTypeAttribute.cs" />
+    <Compile Include="Media\Brush.cs" />
+    <Compile Include="Media\BrushConverter.cs" />
+    <Compile Include="Media\Color.cs" />
+    <Compile Include="Media\Colors.cs" />
+    <Compile Include="Media\DrawingContext.cs" />
+    <Compile Include="Media\FontFamily.cs" />
+    <Compile Include="Media\FontFamilyConverter.cs" />
+    <Compile Include="Media\FormattedText.cs" />
+    <Compile Include="Media\Geometry.cs" />
+    <Compile Include="Media\GeometryConverter.cs" />
+    <Compile Include="Media\HitTestParameters.cs" />
+    <Compile Include="Media\HitTestResult.cs" />
+    <Compile Include="Media\IContainer.cs" />
+    <Compile Include="Media\ImageSource.cs" />
+    <Compile Include="Media\ImageSourceConverter.cs" />
+    <Compile Include="Media\Imaging\BitmapCacheOption.cs" />
+    <Compile Include="Media\Imaging\BitmapCreateOptions.cs" />
+    <Compile Include="Media\Imaging\BitmapDecoder.cs" />
+    <Compile Include="Media\Imaging\BitmapEncoder.cs" />
+    <Compile Include="Media\Imaging\BitmapFrame.cs" />
+    <Compile Include="Media\Imaging\BitmapSource.cs" />
+    <Compile Include="Media\Imaging\JpegBitmapDecoder.cs" />
+    <Compile Include="Media\Imaging\PngBitmapDecoder.cs" />
+    <Compile Include="Media\Imaging\PngBitmapEncoder.cs" />
+    <Compile Include="Media\Imaging\RenderTargetBitmap.cs" />
+    <Compile Include="Media\IPropertyDescriptor.cs" />
+    <Compile Include="Media\ITypeDescriptorContext.cs" />
+    <Compile Include="Media\MatrixTransform.cs" />
+    <Compile Include="Media\PathMarkupParser.cs" />
+    <Compile Include="Media\Pen.cs" />
+    <Compile Include="Media\PixelFormat.cs" />
+    <Compile Include="Media\PixelFormats.cs" />
+    <Compile Include="Media\PointHitTestParameters.cs" />
+    <Compile Include="Media\PointHitTestResult.cs" />
+    <Compile Include="Media\RectangleGeometry.cs" />
+    <Compile Include="Media\SolidColorBrush.cs" />
+    <Compile Include="Media\StreamGeometry.cs" />
+    <Compile Include="Media\StreamGeometryContext.cs" />
+    <Compile Include="Media\Stretch.cs" />
+    <Compile Include="Media\ToleranceType.cs" />
+    <Compile Include="Media\Transform.cs" />
+    <Compile Include="Media\TranslateTransform.cs" />
+    <Compile Include="Media\TypeConverter.cs" />
+    <Compile Include="Media\Typeface.cs" />
+    <Compile Include="Media\Visual.cs" />
+    <Compile Include="Media\VisualTreeHelper.cs" />
+    <Compile Include="Media\XamlReader.cs" />
+    <Compile Include="NameScope.cs" />
+    <Compile Include="PackUri.cs" />
+    <Compile Include="Platform\BitmapContainerFormat.cs" />
+    <Compile Include="Platform\IPlatformBitmapDecoder.cs" />
+    <Compile Include="Platform\IPlatformBitmapEncoder.cs" />
+    <Compile Include="Platform\IPlatformBitmapSource.cs" />
+    <Compile Include="Platform\IPlatformDispatcher.cs" />
+    <Compile Include="Platform\IPlatformFactory.cs" />
+    <Compile Include="Platform\IPlatformFormattedText.cs" />
+    <Compile Include="Platform\IPlatformInterface.cs" />
+    <Compile Include="Platform\IPlatformRenderTargetBitmap.cs" />
+    <Compile Include="Platform\IPlatformStreamGeometry.cs" />
+    <Compile Include="Platform\PlatformInterface.cs" />
+    <Compile Include="Platform\PlatformPresentationSource.cs" />
+    <Compile Include="Platform\RawKeyEventArgs.cs" />
+    <Compile Include="Platform\RawKeyEventType.cs" />
+    <Compile Include="Platform\RawMouseEventArgs.cs" />
+    <Compile Include="Platform\RawMouseEventType.cs" />
+    <Compile Include="PresentationSource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyChangedCallback.cs" />
+    <Compile Include="PropertyMetadata.cs" />
+    <Compile Include="PropertyPath.cs" />
+    <Compile Include="RangeCollection.cs" />
+    <Compile Include="Renderer.cs" />
+    <Compile Include="ResourceDictionary.cs" />
+    <Compile Include="ResourceKey.cs" />
+    <Compile Include="ResourceManagerFactory.cs" />
+    <Compile Include="ResourceReferenceKeyNotFoundException.cs" />
+    <Compile Include="Resources\IResourceReader.cs" />
+    <Compile Include="Resources\ResourceReaderFactory.cs" />
+    <Compile Include="Resources\ResourceSet.cs" />
+    <Compile Include="Resources\StreamResourceInfo.cs" />
+    <Compile Include="RoutedEvent.cs" />
+    <Compile Include="RoutedEventArgs.cs" />
+    <Compile Include="RoutedEventHandler.cs" />
+    <Compile Include="RoutingStrategy.cs" />
+    <Compile Include="RuntimeNamePropertyAttribute.cs" />
+    <Compile Include="Setter.cs" />
+    <Compile Include="SetterBase.cs" />
+    <Compile Include="SetterBaseCollection.cs" />
+    <Compile Include="Style.cs" />
+    <Compile Include="TemplateBindingExtension.cs" />
+    <Compile Include="TemplateContentLoader.cs" />
+    <Compile Include="TemplateKey.cs" />
+    <Compile Include="TemplatePartAttribute.cs" />
+    <Compile Include="Thickness.cs" />
+    <Compile Include="ThicknessConverter.cs" />
+    <Compile Include="Threading\InvalidEnumArgumentException.cs" />
+    <Compile Include="Threading\Dispatcher.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherEventArgs.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherFrame.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherHookEventArgs.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherHookEventHandler.cs" />
+    <Compile Include="Threading\DispatcherHooks.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherObject.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherOperation.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherOperationStatus.cs" />
+    <Compile Include="Threading\DispatcherPriority.cs" />
+    <Compile Include="Threading\DispatcherProcessingDisabled.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherTimer.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherUnhandledExceptionEventArgs.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherUnhandledExceptionEventHandler.cs" />
+    <Compile Include="Threading\DispatcherUnhandledExceptionFilterEventArgs.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Threading\DispatcherUnhandledExceptionFilterEventHandler.cs" />
+    <Compile Include="Threading\Flags.cs" />
+    <Compile Include="Threading\IThread.cs" />
+    <Compile Include="Threading\IThreadService.cs" />
+    <Compile Include="Threading\IXamlReader.cs" />
+    <Compile Include="Threading\ServiceLocator.cs" />
+    <Compile Include="Threading\ThreadServiceService.cs" />
+    <Compile Include="Threading\XamlMember.cs" />
+    <Compile Include="Threading\XamlSetValueEventArgs.cs" />
+    <Compile Include="Trigger.cs" />
+    <Compile Include="TriggerBase.cs" />
+    <Compile Include="TriggerCollection.cs" />
+    <Compile Include="TypeConverterAttribute.cs" />
+    <Compile Include="UIPropertyMetadata.cs" />
+    <Compile Include="Utils\DoubleKeyedDictionary.cs" />
+    <Compile Include="Utils\IListenCollectionChanged.cs" />
+    <Compile Include="Utils\IWeakListener.cs" />
+    <Compile Include="Utils\PackUri.cs" />
+    <Compile Include="Utils\WeakCollectionChangedListener.cs" />
+    <Compile Include="ValidateValueCallback.cs" />
+    <Compile Include="Vector.cs" />
+    <Compile Include="VerticalAlignment.cs" />
+    <Compile Include="VisualTreeHelper.cs" />
+    <Compile Include="Window.cs" />
+    <Compile Include="XamlDeferLoadAttribute.cs" />
+    <Compile Include="XamlDeferringLoader.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

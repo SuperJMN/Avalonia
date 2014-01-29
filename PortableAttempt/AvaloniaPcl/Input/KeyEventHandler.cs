@@ -1,0 +1,4 @@
+namespace Avalonia.Input
+{
+    public delegate void KeyEventHandler(object sender, KeyEventArgs e);
+}

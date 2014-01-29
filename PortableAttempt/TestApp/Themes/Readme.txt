@@ -1,0 +1,1 @@
+﻿I had to modify the templates removing every MarkupExtension. Otherwise, it just refuse to compile :S

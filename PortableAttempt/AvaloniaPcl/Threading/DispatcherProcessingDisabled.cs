@@ -1,0 +1,42 @@
+// -----------------------------------------------------------------------
+// <copyright file="DispatcherProcessingDisabled.cs" company="Steven Kirk">
+// Copyright 2013 MIT Licence. See licence.md for more information.
+// </copyright>
+// -----------------------------------------------------------------------
+
+using System;
+
+namespace Avalonia.Threading
+{
+    public struct DispatcherProcessingDisabled : IDisposable
+    {
+        internal DispatcherProcessingDisabled(int foo)
+        {
+        }
+
+        public static bool operator !=(DispatcherProcessingDisabled left, DispatcherProcessingDisabled right)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool operator ==(DispatcherProcessingDisabled left, DispatcherProcessingDisabled right)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Equals(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

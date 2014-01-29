@@ -1,0 +1,179 @@
+﻿<avalonia:ResourceDictionary xmlns="https://github.com/grokys/Avalonia"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Avalonia.Controls;assembly=Avalonia"
+                    xmlns:avalonia="clr-namespace:Avalonia;assembly=Avalonia"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:io="clr-namespace:System.IO;assembly=mscorlib">
+
+    <!--<avalonia:Style TargetType="{system:Type controls:ContentControl}">
+        <avalonia:Setter Property="Template">
+            <avalonia:Setter.Value>
+                <controls:ControlTemplate TargetType="{system:Type controls:ContentControl}">
+                    <controls:ContentPresenter Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                </controls:ControlTemplate>
+            </avalonia:Setter.Value>
+        </avalonia:Setter>
+    </avalonia:Style>
+
+    <avalonia:Style TargetType="{system:Type avalonia:Window}">
+        <avalonia:Setter Property="Template">
+            <avalonia:Setter.Value>
+                <controls:ControlTemplate TargetType="{system:Type avalonia:Window}">
+                    <controls:Border Background="{TemplateBinding Background}">
+                        <controls:ContentPresenter Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                    </controls:Border>
+                </controls:ControlTemplate>
+            </avalonia:Setter.Value>
+        </avalonia:Setter>
+    </avalonia:Style>
+
+    <avalonia:Style TargetType="{system:Type controls:Button}">
+        <avalonia:Setter Property="Background" Value="#FFDDDDDD"/>
+        <avalonia:Setter Property="BorderBrush" Value="#FF707070"/>
+        <avalonia:Setter Property="Foreground" Value="Black"/>
+        <avalonia:Setter Property="BorderThickness" Value="1"/>
+        <avalonia:Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <avalonia:Setter Property="VerticalContentAlignment" Value="Center"/>
+        <avalonia:Setter Property="Padding" Value="1"/>
+        <avalonia:Setter Property="Template">
+            <avalonia:Setter.Value>
+                <controls:ControlTemplate TargetType="{system:Type controls:Button}">
+                    <controls:Border x:Name="border" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" 
+                            SnapsToDevicePixels="True">
+                        <controls:ContentPresenter x:Name="contentPresenter" 
+                                          Content="{TemplateBinding Content}" 
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                          Focusable="False" 
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          Margin="{TemplateBinding Padding}" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </controls:Border>
+                    <controls:ControlTemplate.Triggers>
+                        <avalonia:Trigger Property="IsMouseOver" Value="True">
+                            <avalonia:Setter Property="Background" TargetName="border" Value="#FFBEE6FD"/>
+                            <avalonia:Setter Property="BorderBrush" TargetName="border" Value="#FF3C7FB1"/>
+                        </avalonia:Trigger>
+                        <avalonia:Trigger Property="IsPressed" Value="True">
+                            <avalonia:Setter Property="Background" TargetName="border" Value="#FFC4E5F6"/>
+                            <avalonia:Setter Property="BorderBrush" TargetName="border" Value="#FF2C628B"/>
+                        </avalonia:Trigger>
+                    </controls:ControlTemplate.Triggers>
+                </controls:ControlTemplate>
+            </avalonia:Setter.Value>
+        </avalonia:Setter>
+    </avalonia:Style>
+
+    <avalonia:Style TargetType="{system:Type controls:TextBox}">
+        <avalonia:Setter Property="Background" Value="White"/>
+        <avalonia:Setter Property="BorderBrush" Value="#FFABADB3"/>
+        <avalonia:Setter Property="Foreground" Value="Black"/>
+        <avalonia:Setter Property="BorderThickness" Value="1"/>
+        <avalonia:Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <avalonia:Setter Property="Template">
+            <avalonia:Setter.Value>
+                <controls:Border x:Name="border" 
+                                 BorderBrush="{TemplateBinding BorderBrush}" 
+                                 BorderThickness="{TemplateBinding BorderThickness}" 
+                                 Background="{TemplateBinding Background}" 
+                                 SnapsToDevicePixels="True">
+                    <controls:Border x:Name="PART_ContentHost"/>
+                </controls:Border>
+                <controls:ControlTemplate.Triggers>
+                    <avalonia:Trigger Property="IsMouseOver" Value="True">
+                        <avalonia:Setter Property="BorderBrush" TargetName="border" Value="#FF7EB4EA"/>
+                    </avalonia:Trigger>
+                    <avalonia:Trigger Property="IsKeyboardFocused" Value="True">
+                        <avalonia:Setter Property="BorderBrush" TargetName="border" Value="#FF569DE5"/>
+                    </avalonia:Trigger>
+                </controls:ControlTemplate.Triggers>
+
+            </avalonia:Setter.Value>
+        </avalonia:Setter>
+    </avalonia:Style>
+
+    <avalonia:Style TargetType="{system:Type controls:CheckBox}">
+        <avalonia:Setter Property="Background" Value="White"/>
+        <avalonia:Setter Property="BorderBrush" Value="#FF707070"/>
+        <avalonia:Setter Property="Foreground" Value="Black"/>
+        <avalonia:Setter Property="BorderThickness" Value="1"/>
+        <avalonia:Setter Property="Template">
+            <avalonia:Setter.Value>
+                <controls:ControlTemplate TargetType="{system:Type controls:CheckBox}">
+                    <controls:Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                        <controls:Grid.ColumnDefinitions>
+                            <controls:ColumnDefinition Width="Auto"/>
+                            <controls:ColumnDefinition Width="*"/>
+                        </controls:Grid.ColumnDefinitions>
+                        <controls:Border x:Name="checkBoxBorder" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" 
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                Margin="1" 
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <controls:Grid x:Name="markGrid">
+                                <io:Path x:Name="optionMark" 
+                                      Data="F1M9.97498,1.22334L4.6983,9.09834 4.52164,9.09834 0,5.19331 1.27664,3.52165 4.255,6.08833 8.33331,1.52588E-05 9.97498,1.22334z" 
+                                      Fill="#FF212121" 
+                                      Margin="1" 
+                                      Opacity="0" 
+                                      Stretch="None"/>
+                            </controls:Grid>
+                        </controls:Border>
+                        <controls:ContentPresenter x:Name="contentPresenter" 
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                          Content="{TemplateBinding Content}" 
+                                          controls:Grid.Column="1" 
+                                          Focusable="False" 
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          Margin="{TemplateBinding Padding}" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </controls:Grid>
+                    <controls:ControlTemplate.Triggers>
+                        <avalonia:Trigger Property="IsMouseOver" Value="True">
+                            <avalonia:Setter Property="Background" TargetName="checkBoxBorder" Value="#FFF3F9FF"/>
+                            <avalonia:Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="#FF5593FF"/>
+                            <avalonia:Setter Property="Fill" TargetName="optionMark" Value="#FF212121"/>
+                        </avalonia:Trigger>
+                        <avalonia:Trigger Property="IsPressed" Value="True">
+                            <avalonia:Setter Property="Background" TargetName="checkBoxBorder" Value="#FFD9ECFF"/>
+                            <avalonia:Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="#FF3C77DD"/>
+                            <avalonia:Setter Property="Fill" TargetName="optionMark" Value="#FF212121"/>
+                        </avalonia:Trigger>
+                        <avalonia:Trigger Property="IsChecked" Value="True">
+                            <avalonia:Setter Property="Opacity" TargetName="optionMark" Value="1"/>
+                        </avalonia:Trigger>
+                        <avalonia:Trigger Property="IsChecked" Value="{x:Null}">
+                            <avalonia:Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                        </avalonia:Trigger>
+                    </controls:ControlTemplate.Triggers>
+                </controls:ControlTemplate>
+            </avalonia:Setter.Value>
+        </avalonia:Setter>
+    </avalonia:Style>
+
+
+    <avalonia:Style TargetType="{system:Type controls:ItemsControl}">
+        <avalonia:Setter Property="Template">
+            <avalonia:Setter.Value>
+                <controls:ControlTemplate TargetType="{system:Type controls:ItemsControl}">
+                    <controls:Border BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" 
+                            Padding="{TemplateBinding Padding}" 
+                            SnapsToDevicePixels="True">
+                        <controls:ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </controls:Border>
+                </controls:ControlTemplate>
+            </avalonia:Setter.Value>
+        </avalonia:Setter>
+    </avalonia:Style>-->
+
+</avalonia:ResourceDictionary>

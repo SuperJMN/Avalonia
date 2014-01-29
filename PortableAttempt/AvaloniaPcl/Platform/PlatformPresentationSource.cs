@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------
+// <copyright file="PlatformPresentationSource.cs" company="Steven Kirk">
+// Copyright 2013 MIT Licence. See licence.md for more information.
+// </copyright>
+// -----------------------------------------------------------------------
+
+using System;
+using Avalonia.Core;
+using Avalonia.Media;
+
+namespace Avalonia.Platform
+{
+    [AvaloniaSpecific]
+    public abstract class PlatformPresentationSource : PresentationSource, IDisposable
+    {
+        public event EventHandler Closed;
+
+        public event EventHandler Resized;
+
+        public abstract Size ClientSize { get; }
+
+        public abstract Rect BoundingRect { get; set; }
+
+        public IntPtr Handle { get; protected set; }
+
+        public abstract DrawingContext CreateDrawingContext();
+
+        public abstract void Dispose();
+
+        public abstract Point PointToScreen(Point p);
+
+        public abstract void Show();
+
+        public abstract void Hide();
+
+        protected void OnClosed()
+        {
+            if (this.Closed != null)
+            {
+                this.Closed(this, EventArgs.Empty);
+            }
+        }
+
+        protected void OnResized()
+        {
+            if (this.Resized != null)
+            {
+                this.Resized(this, EventArgs.Empty);
+            }
+        }
+    }
+}

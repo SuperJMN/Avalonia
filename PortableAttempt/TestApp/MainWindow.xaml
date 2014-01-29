@@ -1,0 +1,10 @@
+﻿<avalonia:Window x:Class="TestApp.MainWindow"
+        xmlns="https://github.com/grokys/Avalonia"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:avalonia="clr-namespace:Avalonia;assembly=Avalonia"
+                          Height="350" Width="525">
+
+    <avalonia:Window.Resources>
+    </avalonia:Window.Resources>
+</avalonia:Window>        
+
