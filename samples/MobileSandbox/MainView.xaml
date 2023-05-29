@@ -2,13 +2,26 @@
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mobileSandbox="using:MobileSandbox"
-             x:DataType="mobileSandbox:MainView">
-  <StackPanel Margin="100 50" Spacing="50">
-    <TextBlock Text="Login" Foreground="White" />
-    <TextBox TextInputOptions.Multiline="True" AcceptsReturn="True" Watermark="Text" Height="200" TextWrapping="Wrap"/>
-    <TextBox Watermark="Username" TextInputOptions.ContentType="Email" TextInputOptions.ReturnKeyType="Done" />
-    <TextBox Watermark="Password" PasswordChar="*" TextInputOptions.ContentType="Password" />
-    <TextBox Watermark="Pin" PasswordChar="*" TextInputOptions.ContentType="Digits" />
-    <Button Content="Login" Command="{Binding ButtonCommand}" />
-  </StackPanel>
+             xmlns:global="clr-namespace:"
+             x:CompileBindings="True"
+             x:DataType="global:MainViewModel">
+  <UserControl.DataContext>
+    <global:MainViewModel />
+  </UserControl.DataContext>
+  <DockPanel>
+    <Menu DockPanel.Dock="Top">
+      <MenuItem Header="Parent" Command="{Binding Command}">
+        <MenuItem FontSize="40" Command="{Binding Command}">
+          <MenuItem.Header>
+            <Border Background="Red">
+              <TextBlock>Child 1</TextBlock>
+            </Border>
+          </MenuItem.Header>
+        </MenuItem>
+        <MenuItem FontSize="40" Command="{Binding Command}" Header="Child 2" />
+        <MenuItem FontSize="40" Command="{Binding Command}" Header="Child 3" />
+      </MenuItem>
+    </Menu>
+    <TextBlock Text="{Binding Message^}" />
+  </DockPanel>
 </UserControl>

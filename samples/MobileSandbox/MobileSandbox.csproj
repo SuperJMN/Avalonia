@@ -32,6 +32,7 @@
     <ProjectReference Include="..\..\src\Avalonia.Themes.Fluent\Avalonia.Themes.Fluent.csproj" />
     <ProjectReference Include="..\MiniMvvm\MiniMvvm.csproj" />
     <ProjectReference Include="..\SampleControls\ControlSamples.csproj" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11-preview8" />
   </ItemGroup>
 
   <ItemGroup>
