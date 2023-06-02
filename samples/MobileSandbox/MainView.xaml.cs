@@ -1,5 +1,3 @@
-using System;
-using System.Windows.Input;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
@@ -11,12 +9,7 @@ namespace MobileSandbox
         {
             AvaloniaXamlLoader.Load(this);
 
-            DataContext = this;
-        }
-
-        public void ButtonCommand()
-        {
-            Console.WriteLine("Button pressed");
+            DataContext = new MainViewModel();
         }
     }
 }
