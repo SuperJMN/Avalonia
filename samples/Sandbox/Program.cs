@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using BindingFailure;
 
 namespace Sandbox
 {
